@@ -8,7 +8,7 @@ export default function Cover() {
 
   useEffect(() => {
     const getbackDrop = async () => {
-      const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.API_KEY}`;
+      const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`;
 
       await axios
         .get(url)

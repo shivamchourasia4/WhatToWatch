@@ -16,7 +16,7 @@ function WatchlistItem(props) {
 
   useEffect(() => {
     const getData = async (media, id) => {
-      const url = `https://api.themoviedb.org/3/${media}/${id}?api_key=${process.env.API_KEY}`;
+      const url = `https://api.themoviedb.org/3/${media}/${id}?api_key=${process.env.REACT_APP_API_KEY}`;
 
       await axios
         .get(url)

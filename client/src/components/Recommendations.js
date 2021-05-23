@@ -10,7 +10,7 @@ function Recommendations(props) {
 
   useEffect(() => {
     const getRec = async () => {
-      let url = `https://api.themoviedb.org/3/${props.media}/${props.id}/recommendations?api_key=${process.env.API_KEY}&language=en-US&page=1`;
+      let url = `https://api.themoviedb.org/3/${props.media}/${props.id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
       await axios
         .get(url)
         .then((res) => {

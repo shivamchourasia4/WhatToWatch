@@ -15,9 +15,9 @@ export default function CarasoulCover(props) {
     const getList = async () => {
       var url = "";
       if (tab === "trend") {
-        url = `https://api.themoviedb.org/3/trending/${props.mediaType}/week?api_key=${process.env.API_KEY}`;
+        url = `https://api.themoviedb.org/3/trending/${props.mediaType}/week?api_key=${process.env.REACT_APP_API_KEY}`;
       } else {
-        url = `https://api.themoviedb.org/3/${props.mediaType}/${tab}?api_key=${process.env.API_KEY}`;
+        url = `https://api.themoviedb.org/3/${props.mediaType}/${tab}?api_key=${process.env.REACT_APP_API_KEY}`;
       }
       await axios
         .get(url)

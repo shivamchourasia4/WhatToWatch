@@ -22,7 +22,7 @@ function DetailCover(props) {
 
   useEffect(() => {
     const getbackDrop = async () => {
-      const url = `https://api.themoviedb.org/3/${media}/${id}?api_key=${process.env.API_KEY}`;
+      const url = `https://api.themoviedb.org/3/${media}/${id}?api_key=${process.env.REACT_APP_API_KEY}`;
 
       await axios
         .get(url)
@@ -39,7 +39,7 @@ function DetailCover(props) {
   }, [id, media]);
 
   const getTrailer = async () => {
-    const url = `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=${process.env.API_KEY}&language=en-US`;
+    const url = `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
     await axios
       .get(url)
       .then((res) => {

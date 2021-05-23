@@ -18,7 +18,7 @@ export default function SearchResults(props) {
 
   useEffect(() => {
     const getData = async () => {
-      var url = `https://api.themoviedb.org/3/search/${tab}?api_key=${process.env.API_KEY}&language=en-US&query=${src}&page=${cuurPage}&include_adult=false`;
+      var url = `https://api.themoviedb.org/3/search/${tab}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${src}&page=${cuurPage}&include_adult=false`;
 
       axios
         .get(url)

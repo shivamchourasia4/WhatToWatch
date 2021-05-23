@@ -80,7 +80,7 @@ function List(props) {
   };
 
   const getTrailer = async (media, id) => {
-    const url = `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=${process.env.API_KEY}&language=en-US`;
+    const url = `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
     await axios
       .get(url)
       .then((res) => {
