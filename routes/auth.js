@@ -9,7 +9,7 @@ const {
   getUsers,
   searchUsers,
   getById,
-} = require("../controllers/authcontrol");
+} = require("../controllers/authControl");
 const authenticate = require("../middleware/authenticate");
 
 router.route("/login").post(Auth);
