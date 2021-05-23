@@ -4,7 +4,7 @@ const router = express.Router();
 const {
   getSuggestions,
   addSuggestion,
-} = require("../controllers/suggestcontrol");
+} = require("../controllers/suggestControl");
 const authenticate = require("../middleware/authenticate");
 
 router
