@@ -7,7 +7,7 @@ const watchlist = require("./routes/watchlist");
 const connections = require("./routes/connections");
 const suggestions = require("./routes/suggest");
 const path = require("path");
-dotenv.config({ path: "./config/config.env" });
+// dotenv.config({ path: "./config/config.env" });
 
 connectDB();
 
