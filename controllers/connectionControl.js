@@ -126,3 +126,57 @@ exports.getConnectionsReq = async (req, res, next) => {
     res.json(user.connections.filter((conf) => conf.confirmed === false));
   });
 };
+
+//Get suggested connections.
+exports.getMutualConnections = async (req, res, next) => {
+  var shuffled = [];
+  var result = new Set();
+  const itsSet = new Set();
+  await user.findById(req.params.id).then((friends) => {
+    const nonMutuals = friends.connections.filter(
+      (conf) => conf.confirmed === true
+    );
+    for (const [key, value] of Object.entries(nonMutuals)) {
+      itsSet.add(value.connectId);
+    }
+
+    // shuffle array function
+    function shuffle(arra1) {
+      let ctr = arra1.length;
+      let temp;
+      let index;
+
+      // While there are elements in the array
+      while (ctr > 0) {
+        // Pick a random index
+        index = Math.floor(Math.random() * ctr);
+        // Decrease ctr by 1
+        ctr--;
+        // And swap the last element with it
+        temp = arra1[ctr];
+        arra1[ctr] = arra1[index];
+        arra1[index] = temp;
+      }
+      return arra1;
+    }
+
+    shuffled = shuffle(nonMutuals).slice(0, 5);
+
+    const search = async () => {
+      for (const [key, value] of Object.entries(shuffled)) {
+        await user.findById(value.connectId).then((res) => {
+          for (const [key, value] of Object.entries(res.connections)) {
+            if (!itsSet.has(value.connectId)) result.add(value.connectId);
+          }
+        });
+      }
+
+      return res.status(200).json({
+        success: true,
+        msg: Array.from(result),
+      });
+    };
+
+    search();
+  });
+};

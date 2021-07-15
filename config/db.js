@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const connectDB = async () => {
   try {
-    // For Dev
+    // // For Dev
     // var url = "mongodb://localhost:27017/WhatToWatch";
-    // //For local db
+    // // //For local db
     // const conn = await mongoose.connect(url, {
     //   //for remote, add uri in env and use MONGO_URI
     //   useNewUrlParser: true,
