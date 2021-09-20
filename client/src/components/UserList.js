@@ -10,10 +10,10 @@ function UserList(props) {
   const history = useHistory();
 
   useEffect(() => {
-    const getInfo = async (id) => {
+    const getInfo = (id) => {
       const url = `/wtw/privateuser/${id}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })

@@ -12,9 +12,9 @@ export default function Footer() {
         </div>
         <div className="col mr">
           <h2>Legal</h2>
-          <h3>Lisence</h3>
+          <h3>License</h3>
           <h3>Privacy Policy</h3>
-          <h3>Terms &#169; Conditons</h3>
+          <h3>Terms &#38; Conditons</h3>
         </div>
       </div>
       <h3>What To Watch&#169; 2021</h3>

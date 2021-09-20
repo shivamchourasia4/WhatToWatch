@@ -16,10 +16,10 @@ function UserItem(props) {
   const history = useHistory();
 
   useEffect(() => {
-    const getInfo = async (id) => {
+    const getInfo = (id) => {
       const url = `/wtw/privateuser/${id}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })
@@ -34,11 +34,11 @@ function UserItem(props) {
         });
     };
 
-    const getConnected = async (usrid) => {
+    const getConnected = (usrid) => {
       const id = jwt_decode(localStorage.getItem("wtwtoken")).id;
       const url = `/wtw/user/${id}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })
@@ -67,10 +67,10 @@ function UserItem(props) {
     getConnected(props.user);
   }, [history, props.user]);
 
-  const reqConnect = async () => {
+  const reqConnect = () => {
     const id = jwt_decode(localStorage.getItem("wtwtoken")).id;
 
-    await axios
+    axios
       .post(
         "/wtw/connect",
         {

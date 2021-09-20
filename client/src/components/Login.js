@@ -21,11 +21,11 @@ function Login() {
     },
   };
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
     e.preventDefault();
 
-    await axios
+    axios
       .post("/wtw/login", {
         email: email,
         password: pswd,

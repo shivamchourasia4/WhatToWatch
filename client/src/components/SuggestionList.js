@@ -16,10 +16,10 @@ function SuggestionList(props) {
   const [by, setBy] = useState("");
 
   useEffect(() => {
-    const getInfo = async () => {
+    const getInfo = () => {
       const url = `/wtw/privateuser/${suggestedBy}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })

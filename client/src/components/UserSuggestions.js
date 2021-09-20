@@ -13,12 +13,12 @@ function UserSuggestions() {
   const history = useHistory();
 
   useEffect(() => {
-    const getresource = async () => {
+    const getresource = () => {
       const id = jwt_decode(localStorage.getItem("wtwtoken")).id;
 
       const url = `/wtw/suggest/${id}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })

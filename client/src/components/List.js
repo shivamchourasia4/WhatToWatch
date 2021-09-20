@@ -79,9 +79,9 @@ function List(props) {
       .then(() => setpos(pos + newDirection));
   };
 
-  const getTrailer = async (media, id) => {
+  const getTrailer = (media, id) => {
     const url = `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
-    await axios
+    axios
       .get(url)
       .then((res) => {
         if (res.data.results.length > 0) {

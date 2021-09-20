@@ -16,10 +16,10 @@ function UserEntity(props) {
   const history = useHistory();
 
   useEffect(() => {
-    const getInfo = async (id) => {
+    const getInfo = (id) => {
       const url = `/wtw/privateuser/${id}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })
@@ -38,10 +38,10 @@ function UserEntity(props) {
     getInfo(props.user);
   }, [history, props.user]);
 
-  const accept = async () => {
+  const accept = () => {
     const id = jwt_decode(localStorage.getItem("wtwtoken")).id;
 
-    await axios
+    axios
       .post(
         "/wtw/connect/confirm",
         {

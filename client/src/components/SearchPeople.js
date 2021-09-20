@@ -24,14 +24,14 @@ function SearchPeople() {
     },
   };
 
-  const getsearch = async (e) => {
+  const getsearch = (e) => {
     e.preventDefault();
     if (qry.length > 0) {
       setLoading(true);
 
       setShowResults(true);
       const url = `/wtw/users/search?name=${qry}`;
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })

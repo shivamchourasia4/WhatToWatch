@@ -26,13 +26,13 @@ function Register() {
     },
   };
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
 
     if (pswd !== confpswd) {
       setMsg("Passwords Did Not Match!");
     } else {
-      await axios
+      axios
         .post("/wtw/register", {
           email: email,
           password: pswd,

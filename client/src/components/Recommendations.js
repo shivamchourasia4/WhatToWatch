@@ -9,9 +9,9 @@ function Recommendations(props) {
   const [isnone, setIsnone] = useState(false);
 
   useEffect(() => {
-    const getRec = async () => {
+    const getRec = () => {
       let url = `https://api.themoviedb.org/3/${props.media}/${props.id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
-      await axios
+      axios
         .get(url)
         .then((res) => {
           if (res.data.results.length < 1) {

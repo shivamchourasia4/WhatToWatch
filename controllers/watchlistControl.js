@@ -102,8 +102,8 @@ exports.removeFromWatchlist = async (req, res, next) => {
 
 //Get watchlist
 
-exports.getWatchlist = async (req, res, next) => {
-  const connections = await user.findById(req.params.id).then((user) => {
+exports.getWatchlist = (req, res, next) => {
+  const connections = user.findById(req.params.id).then((user) => {
     res.json(user.watchlist);
   });
 };

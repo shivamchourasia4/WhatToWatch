@@ -15,11 +15,11 @@ function ModifyWatchlist(props) {
   const history = useHistory();
 
   useEffect(() => {
-    const checkAdded = async () => {
+    const checkAdded = () => {
       const id = jwt_decode(localStorage.getItem("wtwtoken")).id;
       const url = `/wtw/user/${id}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })
@@ -48,10 +48,10 @@ function ModifyWatchlist(props) {
     }
   }, [history, props.media_type, props.tmdbID]);
 
-  const addtoWatchlist = async () => {
+  const addtoWatchlist = () => {
     const id = jwt_decode(localStorage.getItem("wtwtoken")).id;
     setLoading(true);
-    await axios
+    axios
       .post(
         "/wtw/watchlist",
         {
@@ -76,10 +76,10 @@ function ModifyWatchlist(props) {
       });
   };
 
-  const removeFromWatchlist = async () => {
+  const removeFromWatchlist = () => {
     const id = jwt_decode(localStorage.getItem("wtwtoken")).id;
     setLoading(true);
-    await axios
+    axios
       .delete("/wtw/watchlist", {
         headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         data: {

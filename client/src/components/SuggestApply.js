@@ -14,10 +14,10 @@ function SuggestApply(props) {
   const history = useHistory();
 
   useEffect(() => {
-    const getInfo = async (id) => {
+    const getInfo = (id) => {
       const url = `/wtw/privateuser/${id}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })
@@ -36,7 +36,7 @@ function SuggestApply(props) {
     getInfo(props.user);
   }, [history, props.user]);
 
-  const setSuggest = async () => {
+  const setSuggest = () => {
     axios
       .post(
         `/wtw/suggest/id=${props.user}`,

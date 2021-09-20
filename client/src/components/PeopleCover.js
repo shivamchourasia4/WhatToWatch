@@ -12,12 +12,12 @@ function PeopleCover(props) {
   const history = useHistory();
 
   useEffect(() => {
-    const getConnections = async () => {
+    const getConnections = () => {
       const id = jwt_decode(localStorage.getItem("wtwtoken")).id;
 
       const url = `/wtw/connections/${id}`;
 
-      await axios
+      axios
         .get(url, {
           headers: { "x-auth-token": localStorage.getItem("wtwtoken") },
         })

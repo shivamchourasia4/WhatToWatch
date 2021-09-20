@@ -7,10 +7,10 @@ export default function Cover() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const getbackDrop = async () => {
+    const getbackDrop = () => {
       const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`;
 
-      await axios
+      axios
         .get(url)
         .then((res) => {
           setBack(

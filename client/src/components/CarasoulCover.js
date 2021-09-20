@@ -12,14 +12,14 @@ export default function CarasoulCover(props) {
   const whichTabs = ["trend", "popular", "top_rated"];
 
   useEffect(() => {
-    const getList = async () => {
+    const getList = () => {
       var url = "";
       if (tab === "trend") {
         url = `https://api.themoviedb.org/3/trending/${props.mediaType}/week?api_key=${process.env.REACT_APP_API_KEY}`;
       } else {
         url = `https://api.themoviedb.org/3/${props.mediaType}/${tab}?api_key=${process.env.REACT_APP_API_KEY}`;
       }
-      await axios
+      axios
         .get(url)
         .then((res) => {
           setmediaData(res.data.results);
