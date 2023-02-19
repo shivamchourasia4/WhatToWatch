@@ -12,7 +12,7 @@
 <!-- Badges -->
 <p>
   <a href="https://github.com/shivamchourasia4/WhatToWatch/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
+    <img src="https://img.shields.io/github/contributors/shivamchourasia4/WhatToWatch" alt="contributors" />
   </a>
   <a href="">
     <img src="https://img.shields.io/github/last-commit/shivamchourasia4/WhatToWatch" alt="last update" />
